@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>master page</title>
+    <link href="/static/style.css" rel="stylesheet">
+  </head>
+  <body>
+      <h1>logo</h1>
+      {% if user.is_authenticated %}
+      <a href="/accounts/logout">logout</a>
+      {% else %}
+      <a href="/accounts/login">login</a>
+      {% endif %}
+
+      <p>
+        <a href="/masterpage/home">home</a>
+        <a href="/masterpage/about">about</a>
+        <a href="/masterpage/contact">contact</a>
+        </p>
+
+
+        {% block content %}
+          #all the details in this body
+          <H1>LOGO DB</H1>
+        {% endblock %}
+
+        <p>copyright 2020</p>
+
+  </body>
+</html>
